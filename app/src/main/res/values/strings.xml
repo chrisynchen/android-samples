@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">android-samples</string>
+    <string name="start_service">Start Service</string>
+    <string name="start_service_subtitle">Use broadcast to do interaction between activity and service</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="bind_service">Bind Service</string>
+    <string name="counter_finish">Counter Finish</string>
+    <string name="counter_stop">Counter Stop</string>
+</resources>
