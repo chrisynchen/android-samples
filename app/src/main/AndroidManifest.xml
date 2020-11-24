@@ -16,9 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ServiceExperimentActivity" />
+        <activity android:name=".activity.StartServiceExperimentActivity" />
+        <activity android:name=".activity.BindServiceExperimentActivity" />
 
         <service android:name=".service.StartServiceExperiment" />
+
+        <!-- run the service into other process -->
+        <service android:name=".service.BindServiceExperiment"
+             android:process=":bindserviceprocess"/>
     </application>
 
 </manifest>

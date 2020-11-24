@@ -11,12 +11,12 @@ import com.chris.android_samples.R
 import com.chris.android_samples.service.StartServiceExperiment
 import kotlinx.android.synthetic.main.activity_start_service.*
 
-class ServiceExperimentActivity : AppCompatActivity(),
+class StartServiceExperimentActivity : AppCompatActivity(),
     MessageBroadcastReceiver.Listener {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, ServiceExperimentActivity::class.java)
+            return Intent(context, StartServiceExperimentActivity::class.java)
         }
     }
 

@@ -6,4 +6,6 @@
     <string name="bind_service">Bind Service</string>
     <string name="counter_finish">Counter Finish</string>
     <string name="counter_stop">Counter Stop</string>
+    <string name="kill_process">Kill Process</string>
+    <string name="fetch_remain_time">Fetch Remain Time</string>
 </resources>

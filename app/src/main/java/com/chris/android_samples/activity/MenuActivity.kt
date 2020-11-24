@@ -61,7 +61,12 @@ class MenuActivity : AppCompatActivity(),
 
         when (menu?.type) {
             Menu.START_SERVICE -> startActivity(
-                ServiceExperimentActivity.createIntent(
+                StartServiceExperimentActivity.createIntent(
+                    this
+                )
+            )
+            Menu.BIND_SERVICE -> startActivity(
+                BindServiceExperimentActivity.createIntent(
                     this
                 )
             )
