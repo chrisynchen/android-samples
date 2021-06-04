@@ -99,7 +99,7 @@ class BindServiceExperimentActivity : AppCompatActivity() {
             // Recover gracefully from the process hosting the
             // server dying.
             // Just for purposes of the sample, put up a notification.
-            Toast.makeText(this, "killProcess fail", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "killProcess fail", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -24,7 +24,7 @@ class StartServiceExperiment : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Toast.makeText(this, "service onCreate", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "service onCreate", Toast.LENGTH_SHORT).show()
         countDownTimer =
             object : CountDownTimer(TimeUnit.SECONDS.toMillis(10), TimeUnit.SECONDS.toMillis(1)) {
                 override fun onTick(millisUntilFinished: Long) {
@@ -47,13 +47,13 @@ class StartServiceExperiment : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Toast.makeText(this, "service onStartCommand", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "service onStartCommand", Toast.LENGTH_SHORT).show()
         countDownTimer.start()
         return START_STICKY
     }
 
     override fun onBind(p0: Intent?): IBinder? {
-        Toast.makeText(this, "service onBind", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "service onBind", Toast.LENGTH_SHORT).show()
         throw UnsupportedOperationException("we don't provide bind service for this class")
     }
 
@@ -69,7 +69,7 @@ class StartServiceExperiment : Service() {
 
     override fun onDestroy() {
         countDownTimer.cancel()
-        Toast.makeText(this, "service onDestroy", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "service onDestroy", Toast.LENGTH_SHORT).show()
         super.onDestroy()
     }
 }

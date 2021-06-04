@@ -34,7 +34,7 @@ class BindServiceExperiment : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Toast.makeText(this, "service onCreate", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "service onCreate", Toast.LENGTH_SHORT).show()
         countDownTimer =
             object : CountDownTimer(TimeUnit.SECONDS.toMillis(100), TimeUnit.SECONDS.toMillis(1)) {
                 override fun onTick(millisUntilFinished: Long) {
@@ -55,7 +55,7 @@ class BindServiceExperiment : Service() {
     }
 
     override fun onBind(p0: Intent?): IBinder? {
-        Toast.makeText(this, "onBind", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "onBind", Toast.LENGTH_SHORT).show()
         return binder
     }
 
@@ -71,7 +71,7 @@ class BindServiceExperiment : Service() {
 
     override fun onDestroy() {
         countDownTimer.cancel()
-        Toast.makeText(this, "service onDestroy", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "service onDestroy", Toast.LENGTH_SHORT).show()
         super.onDestroy()
     }
 }

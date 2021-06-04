@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".activity.StartServiceExperimentActivity" />
         <activity android:name=".activity.BindServiceExperimentActivity" />
+        <activity android:name=".activity.MemoryLeakActivity" />
 
         <service android:name=".service.StartServiceExperiment" />
 

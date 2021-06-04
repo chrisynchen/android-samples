@@ -12,7 +12,7 @@ import com.chris.android_samples.viewholder.MenuViewHolder
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity(),
-    MenuViewHolder.Listener {
+        MenuViewHolder.Listener {
 
     private lateinit var menuAdapter: MenuAdapter
 
@@ -20,14 +20,14 @@ class MenuActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
         menuAdapter =
-            MenuAdapter(this, buildMenus())
+                MenuAdapter(this, buildMenus())
 
         recyclerView.apply {
             context?.let {
                 val linearLayoutManager = LinearLayoutManager(this@MenuActivity)
                 val drawable = ContextCompat.getDrawable(this@MenuActivity, R.drawable.divider)
                 val dividerItemDecoration =
-                    DividerItemDecoration(it, DividerItemDecoration.VERTICAL)
+                        DividerItemDecoration(it, DividerItemDecoration.VERTICAL)
                 drawable?.let { d ->
                     dividerItemDecoration.setDrawable(d)
                 }
@@ -41,18 +41,26 @@ class MenuActivity : AppCompatActivity(),
     private fun buildMenus(): List<Menu> {
         return mutableListOf<Menu>().apply {
             add(
-                Menu(
-                    Menu.START_SERVICE,
-                    applicationContext.getString(R.string.start_service),
-                    applicationContext.getString(R.string.start_service_subtitle)
-                )
+                    Menu(
+                            Menu.START_SERVICE,
+                            applicationContext.getString(R.string.start_service),
+                            applicationContext.getString(R.string.start_service_subtitle)
+                    )
             )
             add(
-                Menu(
-                    Menu.BIND_SERVICE,
-                    applicationContext.getString(R.string.bind_service),
-                    applicationContext.getString(R.string.bind_service)
-                )
+                    Menu(
+                            Menu.BIND_SERVICE,
+                            applicationContext.getString(R.string.bind_service),
+                            applicationContext.getString(R.string.bind_service)
+                    )
+            )
+
+            add(
+                    Menu(
+                            Menu.MEMORY_LEAK,
+                            applicationContext.getString(R.string.memory_leak),
+                            applicationContext.getString(R.string.memory_leak)
+                    )
             )
         }
     }
@@ -61,14 +69,19 @@ class MenuActivity : AppCompatActivity(),
 
         when (menu?.type) {
             Menu.START_SERVICE -> startActivity(
-                StartServiceExperimentActivity.createIntent(
-                    this
-                )
+                    StartServiceExperimentActivity.createIntent(
+                            this
+                    )
             )
             Menu.BIND_SERVICE -> startActivity(
-                BindServiceExperimentActivity.createIntent(
-                    this
-                )
+                    BindServiceExperimentActivity.createIntent(
+                            this
+                    )
+            )
+            Menu.MEMORY_LEAK -> startActivity(
+                    MemoryLeakActivity.createIntent(
+                            this
+                    )
             )
         }
     }
