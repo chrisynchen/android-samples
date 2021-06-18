@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.chris.android_samples.broadcast.MessageBroadcastReceiver
 import com.chris.android_samples.R
+import com.chris.android_samples.databinding.ActivityStartServiceBinding
 import com.chris.android_samples.service.StartServiceExperiment
-import kotlinx.android.synthetic.main.activity_start_service.*
 
 class StartServiceExperimentActivity : AppCompatActivity(),
     MessageBroadcastReceiver.Listener {
@@ -20,17 +20,19 @@ class StartServiceExperimentActivity : AppCompatActivity(),
         }
     }
 
+    private lateinit var binding: ActivityStartServiceBinding
     private val receiver =
         MessageBroadcastReceiver(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_start_service)
-        startButton.setOnClickListener {
+        binding = ActivityStartServiceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.startButton.setOnClickListener {
             startService(StartServiceExperiment.createIntent(this))
         }
 
-        stopButton.setOnClickListener {
+        binding.stopButton.setOnClickListener {
             stopService(StartServiceExperiment.createIntent(this))
         }
     }
@@ -49,10 +51,10 @@ class StartServiceExperimentActivity : AppCompatActivity(),
     }
 
     override fun onReceiveMessage(message: Long) {
-        counterTextView.text = message.toString()
+        binding.counterTextView.text = message.toString()
     }
 
     override fun onCounterFinish() {
-        counterTextView.text = getString(R.string.counter_finish)
+        binding.counterTextView.text = getString(R.string.counter_finish)
     }
 }
