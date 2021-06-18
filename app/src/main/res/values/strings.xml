@@ -9,4 +9,6 @@
     <string name="counter_stop">Counter Stop</string>
     <string name="kill_process">Kill Process</string>
     <string name="fetch_remain_time">Fetch Remain Time</string>
+    <string name="generate">Generate</string>
+    <string name="color_palette">Color Palette</string>
 </resources>

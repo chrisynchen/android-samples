@@ -56,12 +56,18 @@ class MenuActivity : AppCompatActivity(),
                     applicationContext.getString(R.string.bind_service)
                 )
             )
-
             add(
                 Menu(
                     Menu.MEMORY_LEAK,
                     applicationContext.getString(R.string.memory_leak),
                     applicationContext.getString(R.string.memory_leak)
+                )
+            )
+            add(
+                Menu(
+                    Menu.COLOR_PALETTE,
+                    applicationContext.getString(R.string.color_palette),
+                    applicationContext.getString(R.string.color_palette)
                 )
             )
         }
@@ -82,6 +88,11 @@ class MenuActivity : AppCompatActivity(),
             )
             Menu.MEMORY_LEAK -> startActivity(
                 MemoryLeakActivity.createIntent(
+                    this
+                )
+            )
+            Menu.COLOR_PALETTE -> startActivity(
+                ColorPaletteActivity.createIntent(
                     this
                 )
             )

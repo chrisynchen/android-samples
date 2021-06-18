@@ -5,6 +5,7 @@
     <dimen name="large">12dp</dimen>
     <dimen name="xlarge">16dp</dimen>
     <dimen name="xxlarge">20dp</dimen>
+    <dimen name="xxxlarge">24dp</dimen>
     <dimen name="font_large">16sp</dimen>
     <dimen name="font_xlarge">20sp</dimen>
 </resources>
