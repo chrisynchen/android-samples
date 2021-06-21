@@ -24,6 +24,14 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    kotlinOptions { jvmTarget = JavaVersion.VERSION_1_8.toString() }
+
+    compileOptions {
+        incremental true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -35,11 +43,11 @@ dependencies {
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     implementation "io.reactivex.rxjava2:rxjava:2.2.12"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
     implementation "androidx.cardview:cardview:$versions.cardView"
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
-
 }

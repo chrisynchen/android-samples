@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".activity.ColorPaletteActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="w,1:3"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/startButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/generate"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/large"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
 
     <View
         android:id="@+id/generatedColorView"
