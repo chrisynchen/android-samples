@@ -36,7 +36,7 @@ class ColorPaletteActivity : AppCompatActivity() {
 
         Glide.with(applicationContext)
             .asBitmap()
-            .load("https://www.google.es/images/srpr/logo11w.png")
+            .load("https://d1sag4ddilekf6.cloudfront.net/Merchants/4-CZB3UBDFSEXHRT/pictures/0ff46a211ec3488daa1be5c65f9ab5d5_1584524848506026585.jpeg")
             .into(object : CustomTarget<Bitmap>(SIZE_ORIGINAL, SIZE_ORIGINAL) {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     binding.imageView.setImageBitmap(resource)
