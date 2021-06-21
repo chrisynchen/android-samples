@@ -1,7 +1,8 @@
-package com.chris.android_samples.viewmodel
+package com.chris.android_samples.color_palatte
 
 import android.graphics.Bitmap
 import android.util.Log
+import com.chris.android_samples.viewmodel.BaseViewModel
 
 
 class ColorPaletteViewModel : BaseViewModel() {

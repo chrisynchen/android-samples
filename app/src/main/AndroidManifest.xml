@@ -21,7 +21,7 @@
         <activity android:name=".activity.StartServiceExperimentActivity" />
         <activity android:name=".activity.BindServiceExperimentActivity" />
         <activity android:name=".activity.MemoryLeakActivity" />
-        <activity android:name=".activity.ColorPaletteActivity" />
+        <activity android:name=".color_palatte.ColorPaletteActivity" />
 
         <service android:name=".service.StartServiceExperiment" />
 

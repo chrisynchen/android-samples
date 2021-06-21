@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chris.android_samples.R
 import com.chris.android_samples.adapter.MenuAdapter
+import com.chris.android_samples.color_palatte.ColorPaletteActivity
 import com.chris.android_samples.data.Menu
 import com.chris.android_samples.databinding.ActivityMenuBinding
 import com.chris.android_samples.viewholder.MenuViewHolder

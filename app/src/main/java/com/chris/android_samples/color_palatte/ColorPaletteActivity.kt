@@ -1,4 +1,4 @@
-package com.chris.android_samples.activity
+package com.chris.android_samples.color_palatte
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,6 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.chris.android_samples.databinding.ActivityColorPaletteBinding
 import com.chris.android_samples.extension.getViewModel
-import com.chris.android_samples.viewmodel.ColorPaletteViewModel
 
 
 class ColorPaletteActivity : AppCompatActivity() {
