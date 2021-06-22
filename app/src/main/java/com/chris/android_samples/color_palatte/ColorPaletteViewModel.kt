@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.util.Log
 import com.chris.android_samples.color_palatte.delta_e.LabColor
 import com.chris.android_samples.color_palatte.delta_e.deltaE
+import com.chris.android_samples.util.RxUtil
 import com.chris.android_samples.viewmodel.BaseViewModel
 import io.reactivex.Single
 
@@ -41,6 +42,9 @@ class ColorPaletteViewModel : BaseViewModel() {
                             pair.second
                         }
                 }.map {
+                    for (e in it) {
+                        Log.e("Chris", Integer.toHexString(e.first) + ", total:${e.second}")
+                    }
                     val filterList = mutableListOf(Color.BLACK, Color.WHITE)
                     val list = mutableListOf<Pair<Int, Int>>()
                     for (e in it) {
@@ -51,10 +55,12 @@ class ColorPaletteViewModel : BaseViewModel() {
                         }
                     }
                     list
-                }.subscribe({
-                    for (e in it) {
-                        Log.e("Chris", Integer.toHexString(e.first) + ", total:${e.second}")
-                    }
+                }
+                .compose(RxUtil.applyIoMainSchedulers())
+                .subscribe({
+//                    for (e in it) {
+//                        Log.e("Chris", Integer.toHexString(e.first) + ", total:${e.second}")
+//                    }
                 }, {
                     Log.e("Chris", it.toString())
                 })
